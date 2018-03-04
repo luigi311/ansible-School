@@ -1,7 +1,4 @@
----
-- hosts: all
-  tasks:
-  - name: Update all packages
-    pacakge:
-      name: '*'
-      state: latest
+- name: Update all packages
+  pacakge:
+    name: '*'
+    state: latest
