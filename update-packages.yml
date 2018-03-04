@@ -1,4 +1,4 @@
 - name: Update all packages
-  pacakge:
+  package:
     name: '*'
     state: latest
