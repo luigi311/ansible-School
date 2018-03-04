@@ -1,7 +1,38 @@
 ---
 - hosts: all
+  vars:
+    virtualenvwrapper_startup: "/home/test/.bashrc"
   tasks:
+  - name: Install Nano
+    package:
+      name: nano
+      state: present
+
   - name: Install freemat
     package:
       name: freemat
       state: present
+
+  - name: Install pip
+    package:
+      name: python-pip
+      state: present
+
+  - name: Install Virtualenvwrapper
+    pip:
+      name: Virtualenvwrapper
+
+  - name: Configure Virtualenvwrapper Startup
+    lineinfile:
+      path: "{{ virtualenvwrapper_startup }}"
+      line: "export WORKON_HOME=$HOME/.virtualenvs"
+
+  - name: Configure Virtualenvwrapper Startup
+    lineinfile:
+      path: "{{ virtualenvwrapper_startup }}"
+      line: "export PROJECT_HOME=$HOME/Devel"
+
+  - name: Configure Virtualenvwrapper Startup
+    lineinfile:
+      path: "{{ virtualenvwrapper_startup }}"
+      line: "source /usr/local/bin/virtualenvwrapper.sh"
