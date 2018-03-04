@@ -1,7 +1,11 @@
 ---
 - hosts: all
   tasks:
-  - name: Install packages
+  - name: Update all packages
+    apt:
+      upgrade: dist
+      
+  - name: Install freemat
     apt:
       name: freemat
       state: present
