@@ -1,7 +1,7 @@
 ---
-- hosts: all
+- hosts: debian
   tasks:
     - name: Update all packages
-      package:
+      apt:
         name: "*"
         state: latest
