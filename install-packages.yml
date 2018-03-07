@@ -1,7 +1,7 @@
 ---
 - hosts: all
   vars:
-    virtualenvwrapper_startup: "/home/{{ home_dir }}/.bashrc"
+    virtualenvwrapper_startup: "{{ home_dir }}/.bashrc"
   tasks:
   - name: Install Nano
     package:
