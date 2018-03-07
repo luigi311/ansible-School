@@ -1,7 +1,7 @@
 ---
 - hosts: all
   vars:
-    virtualenvwrapper_startup: "/home/{{ ansible_env.HOME }}/.bashrc"
+    virtualenvwrapper_startup: "/home/{{ home_dir }}/.bashrc"
   tasks:
   - name: Install Nano
     package:
